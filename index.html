@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Attendance Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="logo">
+          <i class="fas fa-user-check"></i>
+          <span>AttendancePro</span>
+        </div>
+        <nav>
+          <a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a>
+          <a href="#"><i class="fas fa-users"></i> Students</a>
+          <a href="#"><i class="fas fa-chart-bar"></i> Analytics</a>
+          <a href="#"><i class="fas fa-cog"></i> Settings</a>
+        </nav>
+        <div class="user-profile">
+          <img
+            src="https://ui-avatars.com/api/?name=Teacher&background=random"
+            alt="User"
+          />
+          <div class="user-info">
+            <strong>Teacher</strong>
+            <small>Admin</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <header>
+          <h1>Attendance Dashboard</h1>
+          <div class="header-actions">
+            <div class="stats">
+              <div class="stat-box present">
+                <i class="fas fa-user-check"></i>
+                <div>
+                  <span id="presentCount">0</span>
+                  <small>Present</small>
+                </div>
+              </div>
+              <div class="stat-box absent">
+                <i class="fas fa-user-times"></i>
+                <div>
+                  <span id="absentCount">0</span>
+                  <small>Absent</small>
+                </div>
+              </div>
+            </div>
+            <button id="refreshBtn" class="glass-btn">
+              <i class="fas fa-sync-alt"></i> Sync Now
+            </button>
+          </div>
+        </header>
+
+        <div class="content">
+          <div class="card">
+            <div class="card-header">
+              <h2><i class="fas fa-clipboard-list"></i> Today's Attendance</h2>
+              <div class="card-actions">
+                <div class="search-box">
+                  <i class="fas fa-search"></i>
+                  <input type="text" placeholder="Search students..." />
+                </div>
+                <span id="lastUpdated">Last sync: Just now</span>
+              </div>
+            </div>
+            <div class="table-container">
+              <table id="attendanceTable">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Student Name</th>
+                    <th>Contact</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="tableBody">
+                  <!-- Data will load here -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="fab" id="exportBtn">
+      <i class="fas fa-file-export"></i>
+    </button>
+
+    <!-- Notification System -->
+    <div id="notificationCenter"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
