@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Load data immediately
   fetchData();
 
-  // Set up auto-refresh every 30 seconds
-  setInterval(fetchData, 30000);
+  // Set up auto-refresh every 3 seconds
+  setInterval(fetchData, 3000);
 
   // Set up event listeners
   refreshBtn.addEventListener("click", () => {
